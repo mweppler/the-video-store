@@ -1,0 +1,16 @@
+%h1= @title
+%table.pure-table
+  %thead
+    %tr
+      %td Title
+      %td Length
+      %td Description
+      %td Genre
+  %tbody
+    - @videos.each do |video|
+      %tr
+        %td
+          %a{ :href => "/video/show/#{video.id}" }= video.title
+        %td= video.length
+        %td= video.description
+        %td= video.genre

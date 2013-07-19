@@ -1,0 +1,29 @@
+%form#video-form.pure-form.pure-form-aligned{ :action => "/video/create", :method => "post", :enctype => "multipart/form-data" }
+  %fieldset
+    %legend= @title
+    .pure-control-group
+      %label Title:
+      %input#title{ :type => "text", :name => "video[title]" }
+
+    .pure-control-group
+      %label Description:
+      %textarea#description{ :name => "video[description]" }
+
+    .pure-control-group
+      %label Genre:
+      %input#genre{ :type => "text", :name => "video[genre]" }
+
+    .pure-control-group
+      %label Length:
+      %input#length{ :type => "text", :name => "video[length]" }
+
+    .pure-control-group
+      %label Image:
+      %input#image-file{ :type => "file", :name => "image-file" }
+
+    .pure-control-group
+      %label Video:
+      %input#video-file{ :type => "file", :name => "video-file" }
+
+    .pure-controls
+      %button.pure-button.pure-button-primary{ :type => "submit" } Submit

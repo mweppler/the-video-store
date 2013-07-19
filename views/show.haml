@@ -1,0 +1,17 @@
+%h1= @title
+%table.pure-table
+  %thead
+    %tr
+      %td Title
+      %td Length
+      %td Description
+      %td Genre
+      %td
+  %tbody
+    %tr
+      %td= @video.title
+      %td= @video.length
+      %td= @video.description
+      %td= @video.genre
+      %td
+        %a.pure-button.pure-button-primary{ :href => "/video/watch/#{@video.id}" } Watch
