@@ -18,7 +18,7 @@ end
 $config = Hash.to_ostructs(YAML.load_file(File.join(Dir.pwd, 'config.yml')))
 
 configure do
-  DataMapper::setup(:default, File.join('sqlite3://', Dir.pwd, 'development.db'))
+  DataMapper::setup(:default, File.join('sqlite3://', Dir.pwd, 'db/development.db'))
 end
 
 class Video
