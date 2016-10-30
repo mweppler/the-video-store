@@ -17,5 +17,10 @@
               %a{ :href => "/video/new" } Upload Video
             %li.pure-menu-selected
               %a{ :href => "/video/list" } Available Videos
+            %li.pure-menu-selected
+              %a{ :href => "/login" } Login
+            %li.pure-menu-selected
+              %form{ :action => "/logout", :method => "post" }
+                %button.pure-button.pure-button-primary{ :type => "submit" } Logout
       .main
         = yield
