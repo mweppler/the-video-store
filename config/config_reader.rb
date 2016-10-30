@@ -1,5 +1,3 @@
-require 'ostruct'
-
 class Hash
   def self.to_ostructs(obj, memo={})
     return obj unless obj.is_a? Hash
@@ -11,11 +9,12 @@ end
 
 
 class ConfigReader
+  attr_accessor :config
+  
   def initialize
-    @config = Hash.to_ostructs(YAML.load_file(File.join(Dir.pwd, 'config.yml')))
+    @config = Hash.to_ostructs(YAML.load_file(File.join(Dir.pwd, '../config/config.yml')))
   end
-
-  def get_config
-    @config
-  end
+  
 end
+
+$config = ConfigReader.new.config

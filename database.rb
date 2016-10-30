@@ -4,8 +4,9 @@ require 'dm-migrations'
 require 'dm-sqlite-adapter'
 require 'dm-timestamps'
 
+
 configure do
-  DataMapper::setup(:default, File.join('sqlite3://', Dir.pwd, 'db/development.db'))
+  DataMapper::setup(:default, File.join('sqlite3://', Dir.pwd, '../db/development.db'))
 end
 
 class Video
@@ -50,6 +51,10 @@ class Attachment
     end
     FileUtils.symlink(self.path, File.join($config.file_properties.send(supported_mime_type['type']).link_path, file[:filename]))
   end
+end
+
+class User
+
 end
 
 configure :development do

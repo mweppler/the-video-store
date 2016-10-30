@@ -2,6 +2,10 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'haml'
+require 'ostruct'
+require 'digest'
+require 'jwt'
+
 require './video_store'
 
 set :environment, :development
