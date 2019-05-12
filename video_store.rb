@@ -50,6 +50,7 @@ class Attachment
   property :updated_at, DateTime
 
   def handle_upload(file)
+    puts "#{file}"
     self.extension = File.extname(file[:filename]).sub(/^\./, '').downcase
     supported_mime_type = $config.supported_mime_types.select { |type| type['extension'] == self.extension }.first
     return false unless supported_mime_type
